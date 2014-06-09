@@ -29,16 +29,16 @@ module.exports = (grunt) ->
 
         shell:
             runnw:
-                options:
-                    stdout: true
-                command: [
-                    './build/cache/mac/0.9.2/node-webkit.app/Contents/MacOS/node-webkit . --debug'
-                ,
-                    '.\\build\\cache\\win\\0.9.2\\nw.exe . --debug'
-                ].join('&')
+                command: ->
+                    if buildPlatforms.mac
+                        return 'build/cache/mac/0.9.2/node-webkit.app/Contents/MacOS/node-webkit . --debug'
+                    if buildPlatforms.win
+                        return '"build/cache/win/0.9.2/nw.exe" . --debug'
+                    if buildPlatforms.linux32
+                        return '"build/cache/linux32/0.9.2/nw" . --debug'
+                    if buildPlatforms.linux64
+                        return '"build/cache/linux64/0.9.2/nw" . --debug'
             create_dmg:
-                options:
-                    stdout: true
                 command: './dist/mac/yoursway-create-dmg/create-dmg --volname "HipHop ' + appVersion + '" --background ./dist/mac/background.png --window-size 480 540 --icon-size 128 --app-drop-link 240 370 --icon "HipHop" 240 110 ./build/releases/HipHop/mac/HipHop-' + appVersion + '.dmg ./build/releases/HipHop/mac/'
 
         nodewebkit:
