@@ -14,9 +14,10 @@ Join us on IRC at `#hiphopapp` on freenode ([web access](http://webchat.freenode
 
 ## Dependencies
 
-You will need nodejs and grunt:
+You will need nodejs, grunt and bower:
 
     $ npm install -g grunt-cli
+    $ npm install -g bower
 
 And ruby with compass to build the stylesheets. Read [this](http://thesassway.com/beginner/getting-started-with-sass-and-compass) for more information.
 
@@ -25,9 +26,10 @@ And ruby with compass to build the stylesheets. Read [this](http://thesassway.co
 Run at least once to install dependencies and generate JS and CSS files.
 
     $ npm install
+    $ bower install
     $ grunt
 
-Run node-webkit from the build/cache directory (--debug always on). Note that grunt build has to be done at least once before this.
+Run node-webkit from the build/cache directory (--debug always on). *Note that grunt build has to be done at least once before this.*
 
     $ grunt run
 
