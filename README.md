@@ -8,6 +8,11 @@ When searching, the app will use iTunes and Last.fm to display song results (wit
 
 No torrents, completely decentralized.
 
+## HipHop on the Web
+
+I've listed the top 20 articles talking about HipHop here:
+https://github.com/hiphopapp/hiphop/wiki/HipHop-on-the-Web
+
 ## Contribute
 
 Join us on IRC at `#hiphopapp` on freenode ([web access](http://webchat.freenode.net/?channels=hiphopapp)).
