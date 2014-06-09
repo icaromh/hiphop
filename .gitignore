@@ -2,16 +2,16 @@
 
 .sass-cache
 
-css/app.css
+app/css/app.css
 
-js/*
-!js/vendor
+app/js/*
+!app/js/vendor
 
-node_modules/
+node_modules
 
-bower_components/
+app/bower_components
 
-build/
+build
 
 npm-debug.log
 

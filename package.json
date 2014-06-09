@@ -6,7 +6,7 @@
         "type" : "git",
         "url" : "https://github.com/hiphopapp/hiphop.git"
     },
-    "main": "index.html",
+    "main": "app/index.html",
     "window": {
         "title": "HipHop",
         "icon": "images/icon.png",

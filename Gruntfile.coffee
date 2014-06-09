@@ -9,23 +9,23 @@ module.exports = (grunt) ->
                 expand: true
                 flatten: true
                 cwd: 'coffee'
-                src: ['*.coffee']
-                dest: 'js'
+                src: ['app/*.coffee']
+                dest: 'app/js'
                 ext: '.js'
             old:
                 options:
                     bare: true
                 files:
-                    'js/app.js': ['coffee/-*.coffee', 'coffee/app.coffee', 'coffee/_*.coffee']
+                    'app/js/app.js': ['app/coffee/-*.coffee', 'app/coffee/app.coffee', 'app/coffee/_*.coffee']
 
         compass:
             dist:
                 options:
                     relativeAssets: true
-                    sassDir: 'sass'
-                    cssDir: 'css'
+                    sassDir: 'app/sass'
+                    cssDir: 'app/css'
                 files:
-                    'css/app.css': 'sass/app.sass'
+                    'app/css/app.css': 'app/sass/app.sass'
 
         shell:
             runnw:
@@ -49,8 +49,16 @@ module.exports = (grunt) ->
                 win: buildPlatforms.win
                 linux32: buildPlatforms.linux32
                 linux64: buildPlatforms.linux64
-            src: ['./css/**', './fonts/**', './images/**', './js/**', './index.html', './package.json',
-                './node_modules/**', '!./node_modules/grunt*/**', '!./node_modules/bower/**']
+            src: [
+                './app/css/**',
+                './app/images/**',
+                './app/js/**',
+                './app/index.html',
+                './package.json',
+                './node_modules/**',
+                '!./node_modules/grunt*/**',
+                '!./node_modules/bower/**'
+            ]
 
         compress:
             linux32:
