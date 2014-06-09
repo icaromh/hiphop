@@ -102,7 +102,6 @@ parseBuildPlatforms = (argumentPlatform) ->
 
     return buildPlatforms
 
-
 getAppVersion = (grunt) ->
     packageJson = grunt.file.readJSON('package.json')
     return packageJson.version
