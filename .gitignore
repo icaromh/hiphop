@@ -15,6 +15,4 @@ build/
 
 npm-debug.log
 
-node-webkit/
-
 *.swp
