@@ -1,0 +1,521 @@
+/* line 17, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 10, ../sass/app.sass */
+.clear {
+  clear: both;
+}
+
+/* line 1, ../sass/_layout.sass */
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  background: #1b1b1b;
+  cursor: default;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  color: white;
+}
+
+/* line 13, ../sass/_layout.sass */
+#main {
+  margin-top: 48px;
+  width: 100%;
+}
+/* line 14, ../sass/_layout.sass */
+#main > table {
+  width: 100%;
+}
+/* line 19, ../sass/_layout.sass */
+#main #sidebar-container, #main #tracklist-container {
+  overflow-x: hidden;
+  overflow-y: overlay;
+}
+/* line 4, ../sass/_utils.sass */
+#main #sidebar-container::-webkit-scrollbar, #main #tracklist-container::-webkit-scrollbar {
+  background: none;
+  width: 9px;
+}
+/* line 7, ../sass/_utils.sass */
+#main #sidebar-container::-webkit-scrollbar-button, #main #tracklist-container::-webkit-scrollbar-button {
+  display: none;
+}
+/* line 9, ../sass/_utils.sass */
+#main #sidebar-container::-webkit-scrollbar-track, #main #tracklist-container::-webkit-scrollbar-track {
+  display: none;
+}
+/* line 11, ../sass/_utils.sass */
+#main #sidebar-container::-webkit-scrollbar-track-piece, #main #tracklist-container::-webkit-scrollbar-track-piece {
+  display: none;
+}
+/* line 13, ../sass/_utils.sass */
+#main #sidebar-container::-webkit-scrollbar-thumb, #main #tracklist-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0);
+  background-clip: content-box;
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+/* line 18, ../sass/_utils.sass */
+#main #sidebar-container::-webkit-scrollbar-corner, #main #tracklist-container::-webkit-scrollbar-corner {
+  display: none;
+}
+/* line 20, ../sass/_utils.sass */
+#main #sidebar-container::-webkit-resizer, #main #tracklist-container::-webkit-resizer {
+  display: none;
+}
+/* line 23, ../sass/_utils.sass */
+#main #sidebar-container:hover::-webkit-scrollbar-thumb, #main #tracklist-container:hover::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.05);
+  background-clip: content-box;
+  border-radius: 10px;
+  border: 1px solid transparent;
+}
+/* line 28, ../sass/_utils.sass */
+#main #sidebar-container:hover::-webkit-scrollbar-thumb:hover, #main #tracklist-container:hover::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+  background-clip: content-box;
+  border-radius: 10px;
+  border: 1px solid transparent;
+}
+/* line 22, ../sass/_layout.sass */
+#main td {
+  vertical-align: top;
+}
+/* line 25, ../sass/_layout.sass */
+#main td.sidebar {
+  width: 194px;
+  background: #121212;
+  border-right: 1px solid black;
+}
+/* line 30, ../sass/_layout.sass */
+#main #sidebar-container, #main #tracklist-container {
+  padding: 12px;
+}
+
+/* line 33, ../sass/_layout.sass */
+button {
+  outline: 0;
+}
+/* line 35, ../sass/_layout.sass */
+button:hover {
+  cursor: pointer;
+}
+/* line 37, ../sass/_layout.sass */
+button:focus {
+  outline: 0;
+}
+
+/* line 1, ../sass/_frame.sass */
+body {
+  -webkit-user-select: none;
+}
+
+/* line 1, ../sass/_header.sass */
+#header {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 1001;
+  position: fixed;
+  padding: 10px;
+  top: 0;
+  width: 100%;
+  background-image: linear-gradient(to bottom, #282828, #1e1e1e);
+  border-bottom: 1px solid black;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 5px;
+}
+/* line 12, ../sass/_header.sass */
+#header #logo {
+  position: fixed;
+  top: 7px;
+  right: 9px;
+  background-image: url(../images/logo@2x.png);
+  background-size: 89px 36px;
+  width: 89px;
+  height: 36px;
+}
+/* line 21, ../sass/_header.sass */
+#header nav {
+  display: inline-block;
+}
+
+/* line 1, ../sass/_player.sass */
+#video-container {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2000;
+}
+
+/* line 8, ../sass/_player.sass */
+#player-container {
+  display: table;
+  position: fixed;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 80px;
+  z-index: 1000;
+  width: 100%;
+  bottom: 0;
+  background-image: linear-gradient(to bottom, #282828, #1e1e1e);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 -2px 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 -2px 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 -2px 5px;
+}
+/* line 20, ../sass/_player.sass */
+#player-container #cover, #player-container #info {
+  display: table-cell;
+  vertical-align: top;
+}
+/* line 24, ../sass/_player.sass */
+#player-container #cover {
+  position: relative;
+  background: #151515;
+  width: 80px;
+  height: 80px;
+  background-size: 80px auto;
+}
+/* line 31, ../sass/_player.sass */
+#player-container #cover #loading-overlay {
+  display: none;
+  position: absolute;
+  background: black;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+/* line 39, ../sass/_player.sass */
+#player-container #info {
+  padding: 16px;
+}
+/* line 41, ../sass/_player.sass */
+#player-container #info #info-text {
+  height: 22px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* line 45, ../sass/_player.sass */
+#player-container #info #info-text #track-info {
+  font-size: 20px;
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.8) 0px 1px 1px;
+}
+/* line 47, ../sass/_player.sass */
+#player-container #info #info-text #track-info #action {
+  display: inline-block;
+  width: 18px;
+  margin-right: 6px;
+}
+/* line 51, ../sass/_player.sass */
+#player-container #info #info-text #track-info #action i {
+  cursor: pointer;
+  opacity: 0.75;
+}
+/* line 54, ../sass/_player.sass */
+#player-container #info #info-text #track-info #action i:hover {
+  opacity: 1;
+}
+/* line 56, ../sass/_player.sass */
+#player-container #info #info-text #track-info #action .pause {
+  display: none;
+}
+/* line 63, ../sass/_player.sass */
+#player-container #info #info-text #track-info #artist {
+  opacity: 0.5;
+  font-weight: 200;
+}
+/* line 66, ../sass/_player.sass */
+#player-container #info #info-text #track-info #title {
+  font-weight: 200;
+}
+/* line 69, ../sass/_player.sass */
+#player-container #info #info-text #video-info {
+  display: none;
+  font-size: 12px;
+  color: white;
+  opacity: 0.3;
+  text-shadow: rgba(0, 0, 0, 0.8) 0px 1px 1px;
+}
+/* line 76, ../sass/_player.sass */
+#player-container #info #controls {
+  margin-top: 13px;
+  display: table;
+  width: 100%;
+}
+/* line 81, ../sass/_player.sass */
+#player-container #info #controls #current-time, #player-container #info #controls #progress-bg-container, #player-container #info #controls #duration {
+  display: table-cell;
+  vertical-align: middle;
+}
+/* line 85, ../sass/_player.sass */
+#player-container #info #controls #current-time, #player-container #info #controls #duration {
+  width: 30px;
+  font-size: 11px;
+  opacity: 0.5;
+  text-shadow: rgba(0, 0, 0, 0.8) 0px 1px 1px;
+}
+/* line 91, ../sass/_player.sass */
+#player-container #info #controls #duration {
+  text-align: right;
+}
+/* line 94, ../sass/_player.sass */
+#player-container #info #controls #progress-bg-container {
+  display: table-cell;
+  vertical-align: middle;
+}
+/* line 98, ../sass/_player.sass */
+#player-container #info #controls #progress-bg-container #progress-bg, #player-container #info #controls #progress-bg-container #progress-current {
+  border-radius: 3px;
+}
+/* line 101, ../sass/_player.sass */
+#player-container #info #controls #progress-bg-container #progress-bg {
+  background: linear-gradient(to top, #282828 0%, #1e1e1e 100%);
+  cursor: pointer;
+}
+/* line 105, ../sass/_player.sass */
+#player-container #info #controls #progress-bg-container #progress-bg #progress-current {
+  height: 6px;
+  background: linear-gradient(to bottom, #18b0ff 0%, #107bb2 100%);
+  width: 0;
+}
+/* line 110, ../sass/_player.sass */
+#player-container #info #controls #volume-icon {
+  display: table-cell;
+  vertical-align: middle;
+  width: 20px;
+  padding-left: 18px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
+}
+/* line 117, ../sass/_player.sass */
+#player-container #info #controls #volume-bg-container {
+  display: table-cell;
+  vertical-align: middle;
+  width: 80px;
+}
+/* line 122, ../sass/_player.sass */
+#player-container #info #controls #volume-bg-container #volume-bg, #player-container #info #controls #volume-bg-container #volume-current {
+  border-radius: 3px;
+}
+/* line 125, ../sass/_player.sass */
+#player-container #info #controls #volume-bg-container #volume-bg {
+  background: linear-gradient(to top, #282828 0%, #1e1e1e 100%);
+  cursor: pointer;
+}
+/* line 129, ../sass/_player.sass */
+#player-container #info #controls #volume-bg-container #volume-bg #volume-current {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
+  opacity: 0.75;
+  height: 6px;
+  background: linear-gradient(to bottom, #ffffff 0%, #b2b2b2 100%);
+  width: 100%;
+}
+
+/* line 2, ../sass/_search.sass */
+#search input {
+  width: 225px;
+  height: 26px;
+  padding: 0 28px;
+  outline: 0;
+  font-size: 13px;
+  color: black;
+  border-radius: 26px;
+  border: 1px solid black;
+  background: #dddddd url(../images/search.png) 10px 7px no-repeat;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 1px inset, rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.1) 0 -1px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 1px inset, rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.1) 0 -1px 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 1px inset, rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.1) 0 -1px 0;
+}
+/* line 13, ../sass/_search.sass */
+#search input:focus {
+  background-color: #eeeeee;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  /* line 18, ../sass/_search.sass */
+  #search input {
+    background-size: 12px 14px;
+    background-image: url(../images/search@2x.png);
+  }
+}
+/* line 2, ../sass/_sidebar.sass */
+#sidebar-container ul {
+  margin-bottom: 15px;
+}
+/* line 5, ../sass/_sidebar.sass */
+#sidebar-container ul li {
+  padding: 7px 5px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  font-weight: 400;
+  border-radius: 3px;
+}
+/* line 12, ../sass/_sidebar.sass */
+#sidebar-container ul li:first-of-type {
+  margin-top: 0;
+}
+/* line 14, ../sass/_sidebar.sass */
+#sidebar-container ul li:last-of-type {
+  margin-bottom: 0;
+}
+/* line 17, ../sass/_sidebar.sass */
+#sidebar-container ul li:not(.sep):not(.active):hover {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+/* line 21, ../sass/_sidebar.sass */
+#sidebar-container ul li.sep {
+  padding: 0;
+}
+/* line 24, ../sass/_sidebar.sass */
+#sidebar-container ul li.active {
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 3px;
+  color: white;
+}
+/* line 29, ../sass/_sidebar.sass */
+#sidebar-container ul li.new {
+  color: rgba(255, 255, 255, 0.4);
+}
+/* line 32, ../sass/_sidebar.sass */
+#sidebar-container ul li hr {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  height: 0;
+}
+
+/* line 2, ../sass/_tracklist.sass */
+#tracklist-container .tracklist-error {
+  text-align: center;
+  padding: 15px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+}
+/* line 8, ../sass/_tracklist.sass */
+#tracklist-container .track-container {
+  margin-bottom: 3px;
+  padding: 5px;
+}
+/* line 11, ../sass/_tracklist.sass */
+#tracklist-container .track-container:hover {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 3px;
+}
+/* line 15, ../sass/_tracklist.sass */
+#tracklist-container .track-container.playing {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 3px;
+}
+/* line 19, ../sass/_tracklist.sass */
+#tracklist-container .track-container .cover {
+  float: left;
+  background-image: url(../images/cover_default_large.png);
+  background-size: 42px;
+  width: 42px;
+  height: 42px;
+  border-radius: 2px;
+  text-shadow: rgba(0, 0, 0, 0.8) 0px 1px 1px;
+}
+/* line 27, ../sass/_tracklist.sass */
+#tracklist-container .track-container .info {
+  float: left;
+  padding: 4px;
+  margin-left: 3px;
+  text-shadow: rgba(0, 0, 0, 0.8) 0px 1px 1px;
+}
+/* line 32, ../sass/_tracklist.sass */
+#tracklist-container .track-container .info .title {
+  font-size: 14px;
+  color: #dddddd;
+}
+/* line 35, ../sass/_tracklist.sass */
+#tracklist-container .track-container .info .artist {
+  font-size: 13px;
+  margin-top: 5px;
+  color: #999999;
+}
+/* line 40, ../sass/_tracklist.sass */
+#tracklist-container .track-container.playingXXX {
+  background: #18b0ff;
+}
+/* line 42, ../sass/_tracklist.sass */
+#tracklist-container .track-container.playingXXX:hover {
+  cursor: default;
+  background: #18b0ff;
+}

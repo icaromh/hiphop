@@ -31,18 +31,19 @@ module.exports = (grunt) ->
             runnw:
                 command: ->
                     if buildPlatforms.mac
-                        return 'build/cache/mac/0.9.2/node-webkit.app/Contents/MacOS/node-webkit . --debug'
+                        return 'build/cache/mac/<%= nodewebkit.options.version %>/node-webkit.app/Contents/MacOS/node-webkit . --debug'
                     if buildPlatforms.win
-                        return '"build/cache/win/0.9.2/nw.exe" . --debug'
+                        return '"build/cache/win/<%= nodewebkit.options.version %>/nw.exe" . --debug'
                     if buildPlatforms.linux32
-                        return '"build/cache/linux32/0.9.2/nw" . --debug'
+                        return '"build/cache/linux32/<%= nodewebkit.options.version %>/nw" . --debug'
                     if buildPlatforms.linux64
-                        return '"build/cache/linux64/0.9.2/nw" . --debug'
+                        return '"build/cache/linux64/<%= nodewebkit.options.version %>/nw" . --debug'
             create_dmg:
                 command: './dist/mac/yoursway-create-dmg/create-dmg --volname "HipHop ' + appVersion + '" --background ./dist/mac/background.png --window-size 480 540 --icon-size 128 --app-drop-link 240 370 --icon "HipHop" 240 110 ./build/releases/HipHop/mac/HipHop-' + appVersion + '.dmg ./build/releases/HipHop/mac/'
 
         nodewebkit:
             options:
+                version: '0.9.2'
                 build_dir: './build'
                 mac_icns: './images/icon.icns'
                 mac: buildPlatforms.mac
