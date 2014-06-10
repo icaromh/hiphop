@@ -1,3 +1,5 @@
+# Open Web SQL Database
+# https://github.com/rogerwang/node-webkit/wiki/Save-persistent-data-in-app#wiki-web-sql-database
 # where to put this ?
 db = openDatabase('hiphopdb', '1.0', '', 10 * 1024 * 1024)
 
