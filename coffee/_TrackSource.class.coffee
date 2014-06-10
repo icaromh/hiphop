@@ -7,7 +7,7 @@ class TrackSource
 
         mashTracks = ->
             tracks_all = tracks_all['itunes'].concat tracks_all['lastfm']
-            
+
             tracks_deduplicated = []
             tracks_hash = []
             $.each tracks_all, (i, track) ->
@@ -22,9 +22,10 @@ class TrackSource
         request
             url: 'http://itunes.apple.com/search?media=music&entity=song&limit=100&term=' + encodeURIComponent(keywords)
             json: true
+            timeout: 10000
         , (error, response, data) ->
+            tracks = []
             if not error and response.statusCode is 200
-                tracks = []
                 try
                     $.each data.results, (i, track) ->
                         tracks.push
@@ -32,17 +33,18 @@ class TrackSource
                             artist: track.artistName
                             cover_url_medium: track.artworkUrl60
                             cover_url_large: track.artworkUrl100
-                tracks_all['itunes'] = tracks
-                if Object.keys(tracks_all).length == 2
-                    mashTracks()
+            tracks_all['itunes'] = tracks
+            if Object.keys(tracks_all).length == 2
+                mashTracks()
 
         # last.fm
         request
             url: 'http://ws.audioscrobbler.com/2.0/?method=track.search&api_key=c513f3a2a2dad1d1a07021e181df1b1f&format=json&track=' + encodeURIComponent(keywords)
             json: true
+            timeout: 10000
         , (error, response, data) ->
+            tracks = []
             if not error and response.statusCode is 200
-                tracks = []
                 try
                     if data.results.trackmatches.track.name
                         data.results.trackmatches.track = [data.results.trackmatches.track]
@@ -59,18 +61,19 @@ class TrackSource
                             artist: track.artist
                             cover_url_medium: cover_url_medium
                             cover_url_large: cover_url_large
-                tracks_all['lastfm'] = tracks
-                if Object.keys(tracks_all).length == 2
-                    mashTracks()
+            tracks_all['lastfm'] = tracks
+            if Object.keys(tracks_all).length == 2
+                mashTracks()
 
 
     @topTracks: (success) ->
         request
             url: 'http://itunes.apple.com/rss/topsongs/limit=50/explicit=true/json'
             json: true
+            timeout: 10000
         , (error, response, data) ->
+            tracks = []
             if not error and response.statusCode is 200
-                tracks = []
                 tracks_hash = []
                 $.each data.feed.entry, (i, track) ->
                     track_hash = track['im:artist'].label + '___' + track['im:name'].label
@@ -81,7 +84,7 @@ class TrackSource
                             cover_url_medium: track['im:image'][1].label
                             cover_url_large: track['im:image'][2].label
                         tracks_hash.push(track_hash)
-                success? tracks
+            success? tracks
 
     @history: (success) ->
         History.getTracks((tracks) ->
