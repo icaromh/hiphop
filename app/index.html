@@ -1,106 +1,110 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="css/app.css">
-    </head>
-    <body>
+<html ng-app="hiphop">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
 
-        <!-- HEADER -->
-        <header id="header">
-            <nav id="search">
-                <input type="text" id="search-input" placeholder="Search...">
-            </nav>
-            <div id="logo"></div>
-        </header>
-        <!---->
+<body>
 
-        <div id="main">
-            <table>
-                <tr>
-                    <td class="sidebar">
-                        <div id="sidebar-container">
-                            <ul></ul>
-                        </div>
-                    </td>
-                    <td>
-                        <div id="tracklist-container"></div>
-                    </td>
-                </tr>
-            </table>
+    <!-- HEADER -->
+    <header id="header">
+        <nav id="search">
+            <input type="text" id="search-input" placeholder="Search...">
+        </nav>
+        <div id="logo"></div>
+    </header>
+    <!---->
+
+    <div id="main">
+        <table>
+            <tr>
+                <td class="sidebar">
+                    <div id="sidebar-container" ng-controller="Sidebar">
+                        <ul></ul>
+                    </div>
+                </td>
+                <td>
+                    <div id="tracklist-container" ng-controller="TrackList">
+                        <ul>
+                            <li class="track-container" ng-repeat="track in tracks" ng-click="alert('track clicked');">
+                                <div class="cover" style="background-image: url({{ track.cover_url_medium }})"></div>
+                                <div class="info">
+                                    <div class="title">{{ track.title }}</div>
+                                    <div class="artist">{{ track.artist }}</div>
+                                </div>
+                                <div class="clear"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div id="player-container">
+        <div id="cover">
+            <div id="loading-overlay"></div>
         </div>
-
-
-        <div id="player-container">
-            <div id="cover">
-                <div id="loading-overlay"></div>
-            </div>
-            <div id="info">
-                <div id="info-text">
-                    <span id="track-info">
-                        <span id="action">
-                            <i class="pause fa fa-pause"></i>
-                            <i class="play fa fa-play"></i>
-                        </span>
-                        <span id="artist"></span> <span id="title"></span>
+        <div id="info">
+            <div id="info-text">
+                <span id="track-info">
+                    <span id="action">
+                        <i class="pause fa fa-pause"></i>
+                        <i class="play fa fa-play"></i>
                     </span>
-                    <span id="video-info"></span>
+                    <span id="artist"></span> <span id="title"></span>
+                </span>
+                <span id="video-info"></span>
+            </div>
+            <div id="controls">
+                <div id="current-time">0:00</div>
+                <div id="progress-bg-container">
+                    <div id="progress-bg">
+                        <div id="progress-current"></div>
+                    </div>
                 </div>
-                <div id="controls">
-                    <div id="current-time">0:00</div>
-                    <div id="progress-bg-container">
-                        <div id="progress-bg">
-                            <div id="progress-current"></div>
-                        </div>
-                    </div>
-                    <div id="duration">0:00</div>
+                <div id="duration">0:00</div>
 
-                    <div id="volume-icon">
-                        <i class="fa fa-volume-up"></i>
-                    </div>
-                    <div id="volume-bg-container">
-                        <div id="volume-bg">
-                            <div id="volume-current"></div>
-                        </div>
-                    </div>
-
+                <div id="volume-icon">
+                    <i class="fa fa-volume-up"></i>
                 </div>
+                <div id="volume-bg-container">
+                    <div id="volume-bg">
+                        <div id="volume-current"></div>
+                    </div>
+                </div>
+
             </div>
         </div>
+    </div>
 
 
-        <div id="video-container">
-            <video id="video_player" width="0" height="0" class="video-js"></video>
-        </div>
+    <div id="video-container">
+        <video id="video_player" width="0" height="0" class="video-js"></video>
+    </div>
 
 
-        <!-- TEMPLATES -->
-        <script id="tmpl-tracklist" type="text/x-jquery-tmpl">
-            <div class="track-container">
-                <div class="cover" style="background-image: url(${cover_url_medium})" data-cover_url_medium="${cover_url_medium}" data-cover_url_large="${cover_url_large}"></div>
-                <div class="info">
-                    <div class="title">${title}</div>
-                    <div class="artist">${artist}</div>
-                </div>
-                <div class="clear"></div>
-            </div>
-        </script>
+    <!-- TEMPLATES -->
+    <script id="tmpl-tracklist-error" type="text/x-jquery-tmpl">
+        <div class="tracklist-error">${message}</div>
+    </script>
+    <!---->
 
 
-        <script id="tmpl-tracklist-error" type="text/x-jquery-tmpl">
-            <div class="tracklist-error">${message}</div>
-        </script>
-        <!---->
+    <!-- SCRIPTS -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/spin.js/spin.js"></script>
+    <script src="bower_components/spin.js/jquery.spin.js"></script>
+    <script src="bower_components/video.js/dist/video-js/video.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <!---->
 
-
-        <!-- SCRIPTS -->
-        <script src="bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="bower_components/spin.js/spin.js"></script> <!-- Should switch to jquery.spin.js -->
-        <script src="bower_components/video.js/dist/video-js/video.js"></script>
-        <script src="bower_components/moment/moment.js"></script>
-        <script src="js/vendor/jquery.tmpl.min.js"></script>
-        <script src="js/app.js"></script>
-        <!---->
-    </body>
+</body>
 </html>

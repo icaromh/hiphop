@@ -8,15 +8,10 @@ module.exports = (grunt) ->
             glob_to_multiple:
                 expand: true
                 flatten: true
-                cwd: 'coffee'
-                src: ['app/*.coffee']
+                cwd: 'app/coffee'
+                src: ['*.coffee']
                 dest: 'app/js'
                 ext: '.js'
-            old:
-                options:
-                    bare: true
-                files:
-                    'app/js/app.js': ['app/coffee/-*.coffee', 'app/coffee/app.coffee', 'app/coffee/_*.coffee']
 
         compass:
             dist:
@@ -87,7 +82,7 @@ module.exports = (grunt) ->
     grunt.loadNpmTasks 'grunt-node-webkit-builder'
     grunt.loadNpmTasks 'grunt-contrib-compress'
     
-    grunt.registerTask 'default', ['compass', 'coffee:old']
+    grunt.registerTask 'default', ['compass', 'coffee']
     grunt.registerTask 'run', ['default', 'shell:runnw']
     grunt.registerTask 'build', ['default', 'clean', 'nodewebkit', 'shell:create_dmg', 'compress']
 

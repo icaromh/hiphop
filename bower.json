@@ -11,6 +11,6 @@
         "video.js": "4.6.x",
         "font-awesome": "4.1.x",
         "spin.js": "2.0.x",
-        "moment": "2.5.1"
+        "moment": "2.6.x"
     }
 }

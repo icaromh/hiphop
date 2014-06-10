@@ -29,4 +29,4 @@ try
 
 #####################################################################
 
-hiphop = angular.module("hiphop", [])
+angular.module "hiphop", []
