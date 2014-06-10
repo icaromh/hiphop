@@ -10,7 +10,7 @@ getUnixTimestamp = ->
 
 #####################################################################
 
-angular.module('hiphop').service "History", ->
+hiphop.service "History", ->
 
     db.transaction (tx) ->
         tx.executeSql 'CREATE TABLE IF NOT EXISTS history (artist, title, cover_url_medium, cover_url_large, last_played)'
@@ -44,7 +44,7 @@ angular.module('hiphop').service "History", ->
 
 #####################################################################
 
-angular.module('hiphop').service "Playlists", ->
+hiphop.service "Playlists", ->
 
     db.transaction (tx) ->
         tx.executeSql 'CREATE TABLE IF NOT EXISTS playlists (name, created)'

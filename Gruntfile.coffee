@@ -8,6 +8,8 @@ module.exports = (grunt) ->
             glob_to_multiple:
                 expand: true
                 flatten: true
+                options:
+                    bare: true
                 cwd: 'app/coffee'
                 src: ['*.coffee']
                 dest: 'app/js'
